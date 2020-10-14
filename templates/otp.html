@@ -1,0 +1,30 @@
+{%extends "base.html"%}
+{% block content%}
+    <div class="row page-titles mx-0">
+    <div class="col p-md-0">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+        <li class="breadcrumb-item active"><a href="javascript:void(0)">Add</a></li>
+    </ol>
+    </div>
+    </div>
+    <div class="container-fluid">
+    <div class="row">
+    <div class="col-sm-12">
+	<div class="card">
+	<div class="card-body">
+		<div class="card-title">
+		</div>
+        <form method="post" action = "{{ url_for('table') }}">
+            <div class="form-group">
+                <label for="otp">OTP</label>
+                <input type="text" class="form-control form-control-lg" id="otp" name="otp">
+            </div>
+            <button class="btn login-form__btn submit w-100" onclick="table()">Submit</button>
+        </form>
+	</div>
+	</div>
+    </div>
+    </div>
+    </div>
+{%endblock%}

@@ -1,0 +1,42 @@
+{%extends "base.html"%}
+{% block content%}
+    <div class="row page-titles mx-0">
+    <div class="col p-md-0">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+        <li class="breadcrumb-item active"><a href="javascript:void(0)">Add</a></li>
+    </ol>
+    </div>
+    </div>
+    <div class="container-fluid">
+    <div class="row">
+    <div class="col-sm-12">
+	<div class="card">
+	<div class="card-body">
+		<div class="card-title">
+		</div>
+        <form method="post" action = "{{ url_for('fetching') }}">
+          <div class="form-group">
+            <label for="id">Id</label>
+            <input type="text" class="form-control" id="id" name="id"><br>
+          </div>
+          <div class="form-group">
+            <label for="id">Age</label>
+            <input type="text" class="form-control" id="age" name="id"><br>
+          </div>
+          <div class="form-group">
+            <label for="id">Technology</label>
+            <input type="text" class="form-control" id="technology" name="technology"><br>
+          </div>
+          <div class="form-group">
+            <label for="id">Desgination</label>
+            <input type="text" class="form-control" id="desgination" name="desgination"><br>
+          </div>
+          <input type="submit" name="submit" value="Submit"></input>
+        </form>
+	</div>
+	</div>
+    </div>
+    </div>
+    </div>
+{%endblock%}

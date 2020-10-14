@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Table displaying</title>
+</head>
+<body>
+<table class="table table-striped" border ="10" align="center" id="Table1">
+    <tr>
+        <th style="background-color:pink;">Id</th>
+        <th style="background-color:pink;">Age</th>
+        <th style="background-color:pink;">Technology</th>
+        <th style="background-color:pink;">Desgination</th>
+    </tr>
+{% for k in data%}
+    <tr>
+        <td><input type="checkbox" id="myCheck" name=""/><a href="{{url_for('reback_data', e_id=k._id)}}">{{k._id}}</a></td>
+        <td>{{k.Age}}</td>
+        <td>{{k.Technology}}</td>
+        <td>{{k.Desgination}}</td>
+    </tr>
+  {% endfor %}
+<button type="button"  onClick="window.location.href='{{ url_for('add_data')}}';" style="float: right; background-color:blue;width: 100px; height: 20px;">Add</button><br>
+<button type="button"  onClick="window.location.href='{{ url_for('table')}}';" style="float: right; background-color:blue;width: 100px; height: 20px;">Edit</button><br>
+<!--<button type="button"  onClick="window.location.href='{{ url_for('delete')}}';" style="float: right; background-color:blue;width: 100px; height: 20px;">Delete</button><br>-->
+</table>
+<input id = "btnSubmit" type="button" value="Release"/>
+<!--<button  class ="selectdata1">GetSelected</button>-->
+    <script src="{{ url_for('static', filename='plugins/common/common.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/custom.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/settings.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/gleek.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/styleSwitcher.js')}}"></script>
+<script>
+        $("#btnSubmit").click(function(){
+        console.log("sunitha");
+        //Reference the test.
+        var grid = document.getElementById("Table1");
+
+        //Reference the CheckBoxes in Table.
+        var checkBoxes = grid.getElementsByTagName("INPUT");
+        var message = "";
+
+        //Loop through the CheckBoxes.
+        console.log("dddddd")
+        for (var i = 0; i < checkBoxes.length; i++) {
+            if (checkBoxes[i].checked) {
+                var row = checkBoxes[i].parentNode.parentNode;
+                message += row.cells[0].innerHTML.split("/")[2];
+                message += "   " +row.cells[1].innerHTML;
+                message += "   " + row.cells[2].innerHTML;
+                message += "   " + row.cells[3].innerHTML;
+                message += "\n";
+            }
+        }
+
+        <!--//Display selected Row data in Alert Box.-->
+        alert(message);
+        $.ajax({
+          type: "POST",
+          url: "/delete",
+          data:message,
+          });
+        });
+</script>
+</body>
+</html>

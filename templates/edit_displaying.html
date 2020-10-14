@@ -1,0 +1,41 @@
+{%extends "base.html"%}
+{% block content%}
+<div class="row page-titles mx-0">
+<div class="col p-md-0">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+        <li class="breadcrumb-item active"><a href="javascript:void(0)">Edit</a></li>
+    </ol>
+</div>
+</div>
+<div class="container-fluid">
+<div class="row">
+<div class="col-sm-12">
+	<div class="card">
+	<div class="card-body">
+		<div class="card-title">
+		</div>
+        <form method="post" action = "{{ url_for('replacingdata') }}">
+          <div class="form-group">
+            <label for="id">Id</label>
+            <input type="text" class="form-control form-control-lg" id="id" name="id" value="{{iddetials}}" disabled><br>
+            </div>
+          <div class="form-group">
+            <label for="age">Age</label>
+            <input type="text" class="form-control form-control-lg" id="age" name="age" value="{{agedata}}"><br>
+          </div>
+        <div >
+            <!--<input type="button" class="btn btn-primary" name="submit" value="Cancel" style="float: center;">-->
+            <button type="cancel" class="btn btn-primary" onclick="table()" style="float: left;">Cancel</button>
+        </div>
+        <div >
+        <input type="submit" class="btn btn-primary" name="submit" value="Update" style="float: right;">
+        </div>
+        </form>
+
+	</div>
+	</div>
+</div>
+</div>
+
+{%endblock%}

@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="form-group">
+      <div class="col-md-10">
+          <form  method="post" action = "{{ url_for('replacingdata') }}">
+        <label class="form-lable">ID</label>
+        <input type="text" class="form-control input-lg " name="id" value="{{iddetials}}" ><br>
+        <label class="form-lable">Age</label>
+        <input type="text" class="form-control input-lg " name="age" value="{{agedata}}" >
+        <input type="submit" class="btn btn-primary" name="submit" value="Update" style="float: right;">
+        <a href=""><input type="button" class="btn btn-primary" name="submit" value="Cancel"></a>
+
+        <!--<label class="form-lable">Technology</label>-->
+        <!--<input type="text" class="form-control input-lg " name="age" value="{{technologydetails}}" >-->
+        <!--<label class="form-lable">Desgination</label>-->
+        <!--<input type="text" class="form-control input-lg " name="age" value="{{desginationdetials}}" >-->
+          </form>
+      </div>
+    </div>
+</div>

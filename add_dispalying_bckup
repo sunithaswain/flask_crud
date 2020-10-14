@@ -1,0 +1,14 @@
+<div class="formwrapper" align="center">
+  <h2 class="title">Contact</h2>
+  <form  method="post" action="{{ url_for('fetching') }}">
+  <label for="id">Id:</label><br>
+  <input type="text" name="id" id="id"><br>
+  <label for="age">Age:</label><br>
+  <input type="text" name="age" id="age"><br>
+  <label for="technology">Technology:</label><br>
+  <input type="text" name="technology" id="technology"><br>
+  <label for="desgination">Desgination:</label><br>
+  <input type="text" name="desgination" id="desgination">
+  <input type="submit" name="submit" value="Submit"></input>
+  </form>
+</div>

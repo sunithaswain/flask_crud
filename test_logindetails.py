@@ -1,0 +1,1 @@
+from crudtest.main import table
